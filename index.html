@@ -14,8 +14,9 @@
     <title>Happy birthday</title>
   </head>
   <body>
-    <main class="container my-5" id="bg">
-      <div>
+    <main class="container my-5" id="background">
+      <div id="splash"></div>
+      <div class="text-center mb-4">
         <h1>Happy birthday!</h1>
         <h2>“A las 11:11”</h2>
         <p class="lead">
@@ -39,7 +40,21 @@
           ese minuto donde vos existís.
         </p>
       </div>
+      <div class="player">
+        <button class="btn-player" id="prev">⏮</button>
+        <button class="btn-player" id="play">▶</button>
+        <button class="btn-player" id="next">⏭</button>
+        <span id="song-title">Sin canción</span>
+
+        <!-- Audio invisible -->
+        <audio id="audio"></audio>
+
+        <div class="progress" id="progress">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
     </main>
+    <script src="./player.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

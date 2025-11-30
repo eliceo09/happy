@@ -1,3 +1,120 @@
-.bg {
-  background-image: url("./bg.avif");
+main {
+  background-color: blueviolet;
+  background-image: url(./bg.avif);
+}
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1); /* tamaño normal al inicio */
+  transition: opacity 3.5s ease, transform 3s ease; /* transición suave */
+}
+
+#splash.hidden {
+  opacity: 0; /* desvanecimiento */
+  transform: scale(1.2); /* ligero zoom out mientras desaparece */
+  pointer-events: none;
+}
+
+/* Contenido */
+#contenido {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff opacity 0.5;
+}
+
+#contenido.visible {
+  display: block;
+  opacity: 1;
+}
+#contenido h1 {
+  font-family: "Poppins", sans-serif !important; /* elegante y moderna */
+  color: #ab46d3; /* rojo vibrante */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* sombra para destacar */
+  margin-bottom: 20px;
+  transition: transform 0.5s ease, color 0.5s ease;
+  size: 3.5rem !important;
+  font-weight: 1000;
+  -webkit-text-stroke: 1px #000000;
+}
+/* Efecto hover opcional */
+#contenido h1:hover {
+  transform: scale(1.05); /* pequeño zoom */
+  color: #ffffff; /* resalta un poco más al pasar el mouse */
+}
+#message {
+  font-family: "Poppins", sans-serif;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* 🎶 Reproductor */
+.player {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+}
+
+.btn-player {
+  background: #444;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.btn-player:hover {
+  background: #666;
+}
+
+.progress {
+  flex: 1;
+  height: 6px;
+  background: #555;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: #00bcd4;
+  transition: width 0.1s;
+}
+p {
+  background-color: #66666680; /* Color de fondo con opacidad */
+}
+
+.pintImg {
+  width: 100% !important;
+  height: 70vh !important; /* ocupa el 60% del alto de la pantalla */
+  object-fit: cover; /* recorta sin deformar */
 }
