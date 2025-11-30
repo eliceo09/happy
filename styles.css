@@ -1,7 +1,22 @@
-main {
-  background-color: blueviolet;
-  background-image: url(./bg.avif);
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
 }
+
+main {
+  font-family: Arial, sans-serif;
+  background-image: url("./bg.avif");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 #splash {
   position: fixed;
   top: 0;
